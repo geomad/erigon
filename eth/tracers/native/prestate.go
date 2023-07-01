@@ -217,9 +217,7 @@ func (t *prestateTracer) CaptureTxEnd(restGas uint64) {
 				delete(t.pre[addr].Storage, key)
 			} else {
 				modified = true
-				if !newVal.IsZero() {
-					postAccount.Storage[key] = newVal.Bytes32()
-				}
+				postAccount.Storage[key] = newVal.Bytes32()
 			}
 		}
 
